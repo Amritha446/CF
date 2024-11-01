@@ -13,13 +13,11 @@
         </form>
         <cfif structKeyExists(form,"submit")>
             
-            <cfset output=createObject("component","struct")>
+            <cfset output=createObject("component","structure")>
             <cfset struct=output.form_struct(form.text1,form.text2)>
-            <cfdump  var="#struct#">
+            <cfset structAppend(session.Session, struct)>
+            <cfdump  var="#session.Session#">
         </cfif>
         
     </body>
 </html>
-<!---<cfset key=form.text1>
-            <cfset value=form.text2>
-            <cfset struct[key]=value>--->

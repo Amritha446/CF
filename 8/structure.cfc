@@ -4,6 +4,7 @@
         <cfargument  name="value" type="string">
         <cfset struct=structNew()>
         <cfset struct[key]=value>
+        
         <cfreturn struct>
     </cffunction>
 </cfcomponent>

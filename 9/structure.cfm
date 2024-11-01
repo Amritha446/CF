@@ -12,14 +12,10 @@
             <input type ="submit" value="sub" name="submit">
         </form>
         <cfif structKeyExists(form,"submit")>
-            
-            <cfset output=createObject("component","struct")>
-            <cfset struct=output.form_struct(form.text1,form.text2)>
-            <cfdump  var="#struct#">
+            <cfset structAppend(session.Session, struct)>
+            <cfdump  var="#session.Session#">
         </cfif>
-        
+         <cfset structDelete(form,"key")>
+        <cfset structDelete(form,"value")>
     </body>
 </html>
-<!---<cfset key=form.text1>
-            <cfset value=form.text2>
-            <cfset struct[key]=value>--->
