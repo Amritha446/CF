@@ -8,6 +8,10 @@
         <input type="number" name="num" id="num">
         <input type="submit" value="submit">
         </form>
+        <cffunction  name="multiply">
+
+        </cffunction>
+        
         <cfif structKeyExists(form,"num")>
             <cfset num1=form.num>
             <cfset arr=listToArray(num1,"")>
@@ -17,8 +21,9 @@
                 <cfset arrayAppend(array,arr[i])>
                 <cfset result=arr[i]*result>
             </cfloop>
-        </cfif>
+        
         <cfoutput>product of entered elements:#result#
             </cfoutput>
+        </cfif>
     </body>
 </html>
