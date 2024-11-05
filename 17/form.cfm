@@ -23,7 +23,7 @@
         <cfif structKeyExists(form, "submit")>
             <cfset formNumber = form.number>
            <cfif NOT isNumeric(formNumber)>
-                <cfoutput><p style="color:red;">" ughjibhh"</p></cfoutput>
+                <cfoutput><p style="color:red;">" "</p></cfoutput>
             <cfelse>
                 <cfoutput>
                     <p style="color:green;">Form submitted successfully with number: #formNumber#</p>
