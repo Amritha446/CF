@@ -15,19 +15,19 @@
 </head>
 <body>
     <cfoutput>
-        <form name="Form" onsubmit="return validateForm()" method="post">
-            <label for="number">Enter a number:</label>
-            <input type="text" name="number" id="number" required>
-            <input type="submit" name="submit" value="submit">
+        <form name = "form" onsubmit="return validateForm()" method="post">
+            <label for = "number">Enter a number:</label>
+            <input type = "text" name="number" id="number" required>
+            <input type = "submit" name = "submit" value = "submit">
         </form>
         <cfif structKeyExists(form, "submit")>
-            <cfset formNumber = form.number>
-           <cfif NOT isNumeric(formNumber)>
-                <cfoutput><p style="color:red;">" "</p></cfoutput>
+            <cfset local.formNumber = form.number>
+           <cfif NOT isNumeric(local.formNumber)>
+                <cfoutput><p style = "color:red;">" "</p></cfoutput>
             <cfelse>
                 <cfoutput>
-                    <p style="color:green;">Form submitted successfully with number: #formNumber#</p>
-                    <cfloop from="1" to="#formNumber#" index="i">
+                    <p style="color:green;">Form submitted successfully with number: #local.formNumber#</p>
+                    <cfloop from = "1" to="#local.formNumber#" index = "i">
                         <cfif i%2==0>
                             <p style="color:green;">#i#</p>
                         <cfelse>
@@ -36,7 +36,6 @@
                     </cfloop>
                 </cfoutput>
             </cfif>
-            
         </cfif>
     </cfoutput>
 </body>

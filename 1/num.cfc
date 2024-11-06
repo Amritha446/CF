@@ -1,5 +1,5 @@
 <cfcomponent>
-    <cffunction  name="form_data" access="public" returnType="String">
+    <cffunction  name="formData" access="public" returnType="String">
         <cfargument  name="num" type="numeric">
             <cfif arguments.num EQ 1 or arguments.num EQ 2>
                 <cfreturn "ok">

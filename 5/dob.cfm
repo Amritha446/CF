@@ -4,20 +4,20 @@
     </head>
     <body>
         <cfoutput>
-            <form method="post" name="struct_form">
+            <form method = "post" name = "struct">
                 Enter the dob of mother:
-                <input type="date" name="age1" >
+                <input type = "date" name = "age1" >
                 Enter the dob of child:
-                <input type="date" name="age2" >
-                <input type ="submit" value="sub">
+                <input type = "date" name = "age2" >
+                <input type = "submit" value= "sub">
             </form>
             <cfif structKeyExists(form,"age1" ) && structKeyExists(form,"age2" )>
-                <cfset output=createObject("component","dob")>
-                <cfset result=output.age_calc(form.age1,form.age2)>
-                <p >age of delivery: #result.ageofdelivery#</p>
-                <p >age of son: #result.ageofson#</p>
-                <p>days left for mothers bday:#result.mom#</p>
-                <p>days left for child bday:#result.child#</p>
+                <cfset local.output = createObject("component","dob")>
+                <cfset local.result = local.output.ageCalculation(form.age1,form.age2)>
+                <p >age of delivery: #local.result.ageOfDelivery#</p>
+                <p >age of son: #local.result.ageOfSon#</p>
+                <p>days left for mothers bday:#local.result.mom#</p>
+                <p>days left for child bday:#local.result.child#</p>
             </cfif>
          </cfoutput>
     </body>
