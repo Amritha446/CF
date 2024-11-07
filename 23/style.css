@@ -1,0 +1,16 @@
+.container{
+    margin-left:300px;
+    margin-top:10px;
+}
+.secondBox{
+    height:50px;
+    border-bottom:dotted;
+    margin-left:10px;
+}
+.para{
+    font-size: 12px;
+}
+.form{
+    font-size: 13px;
+    margin-left:10px;
+}

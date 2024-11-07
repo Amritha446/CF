@@ -9,9 +9,10 @@
         <cfset local.subject = "New Form Submission">
         <cfset local.filePath = expandPath("./images")>
         <cffile action="upload" destination="#local.filePath#" nameConflict="MakeUnique">
-        <cfset local.img=cffile.clientFile>
+        <cfset local.img=cffile.clientFile>               <!---to fetch the details of image uploaded--->
         <cfmail to = "#local.toEmail#" from = "#arguments.email#" subject = "#local.subject#" mimeattach="#local.filePath#/#local.img#">
            #arguments.message#
         </cfmail>
+         <cfdump  var="#local.img#">
     </cffunction>
 </cfcomponent>

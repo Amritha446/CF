@@ -4,7 +4,7 @@
     <title>Form Number Validation</title>
     <script>
         function validateForm() {
-            var number = document.forms["Form"]["number"].value;
+            var number = document.forms["form"]["number"].value;
             if (isNaN(number) || number.trim() === "") {
                 alert("Please enter a valid number.");
                 return false;
@@ -23,7 +23,7 @@
         <cfif structKeyExists(form, "submit")>
             <cfset local.formNumber = form.number>
            <cfif NOT isNumeric(local.formNumber)>
-                <cfoutput><p style = "color:red;">" "</p></cfoutput>
+                <cfoutput><p style = "color:red;"></p></cfoutput>
             <cfelse>
                 <cfoutput>
                     <p style="color:green;">Form submitted successfully with number: #local.formNumber#</p>
