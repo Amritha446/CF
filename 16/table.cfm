@@ -19,9 +19,7 @@
                 <cfdump  var = #local.result#>
                 <cfloop index = "i" from = "1" to = "#form.num1#">
                     <cfloop index = "j" from = "1" to = "#form.num2#"> 
-                        <cfoutput>
-                            #local.result[i][j]#
-                        </cfoutput>
+                         #local.result[i][j]#
                     </cfloop><br>
                 </cfloop>
             </cfif>

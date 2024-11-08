@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Form Number Validation</title>
+    <link href="style/style.css" rel="stylesheet">
     <script>
         function validateForm() {
             var number = document.forms["form"]["number"].value;
@@ -22,20 +23,10 @@
         </form>
         <cfif structKeyExists(form, "submit")>
             <cfset local.formNumber = form.number>
-           <cfif NOT isNumeric(local.formNumber)>
-                <cfoutput><p style = "color:red;"></p></cfoutput>
-            <cfelse>
-                <cfoutput>
-                    <p style="color:green;">Form submitted successfully with number: #local.formNumber#</p>
-                    <cfloop from = "1" to="#local.formNumber#" index = "i">
-                        <cfif i%2==0>
-                            <p style="color:green;">#i#</p>
-                        <cfelse>
-                            <p style="color:red;">#i#</p>
-                        </cfif>
-                    </cfloop>
-                </cfoutput>
-            </cfif>
+            <cfset local.obj=createObject("component","form")>
+            <cfset local.result=local.obj.formFunction(local.formNumber)>
+            
+            #local.result#
         </cfif>
     </cfoutput>
 </body>

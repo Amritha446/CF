@@ -13,6 +13,6 @@
         <cfmail to = "#local.toEmail#" from = "#arguments.email#" subject = "#local.subject#" mimeattach="#local.filePath#/#local.img#">
            #arguments.message#
         </cfmail>
-         <cfdump  var="#local.img#">
+        <cfdump  var="#local.img#">
     </cffunction>
 </cfcomponent>

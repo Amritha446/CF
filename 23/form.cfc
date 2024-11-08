@@ -14,8 +14,8 @@
         <cfargument  name = "ph2">
         <cfargument  name = "ph3">
         <cfscript>
-            local.myQuery = queryNew("name,age,mail","Varchar,integer,varchar",{name = "#name1#",age = "#age1#",mail = "#mail1#"})
+           
         </cfscript>
-        <cfreturn local.myQuery>
+        <cfreturn >
     </cffunction>
 </cfcomponent>

@@ -5,7 +5,7 @@
         <title>form validation</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
-        <link href="style.css" rel="stylesheet">
+        <link href="style/style.css" rel="stylesheet">
     </head>
     <body>
         <cfoutput>
@@ -19,7 +19,6 @@
                         <p class="fw-1 para">Infinity Box Inc.</p>
                     </div>
                     <form method="post" id = 'form' class="mt-2 form">
-
                         <div class="col-5 text-secondary"> which position are you applying for?</div>
                         <select name = "position" class = "mt-2" id = "class" >
                             <option></option>
@@ -29,7 +28,6 @@
                             <option>Office manager</option>
                         </select>
                         <div class="error text-danger" id="positionError"></div>
-
                         <div class="col-3 text-secondary mt-2" >Are you willing to relocate?</div>
                         <input type = "radio" name = "relocate1" value = "Yes" class="mt-1 me-1" >Yes<br>
                         <input type = "radio" name = "relocate2" value = "No" class="mt-2 me-1">No<br>
@@ -90,7 +88,7 @@
                     <cfset local.result=local.formObj.form(form.name,form.num,form.mail)>
                     <cfdump  var="#local.result#">
                 </cfif> 
-                <script src="validation.js"></script>
+                <script src="js/validation.js"></script>
             </div>
         </cfoutput>
     </body>
