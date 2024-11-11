@@ -1,6 +1,4 @@
-//function validateForm() {
-// document.getElementById('form').addEventListener('submit', function(event) {
-//     event.preventDefault(); 
+
     function validate(){
     let position = document.forms["form"]["position"].value;
     let relocate1 = document.forms["form"]["relocate1"].checked;
@@ -9,9 +7,9 @@
     let firstNme = document.forms["form"]["name1"].value;
     let lastNme = document.forms["form"]["name2"].value;
     let mail1 = document.forms["form"]["mail"].value;
-    let ph1 = document.forms["form"]["p1"].value;
-    let ph2 = document.forms["form"]["p2"].value;
-    let ph3 = document.forms["form"]["p3"].value;
+    let p1 = document.forms["form"]["p1"].value;
+    let p2 = document.forms["form"]["p2"].value;
+    let p3 = document.forms["form"]["p3"].value;
     let valid = true;
 
   if (!relocate1 && !relocate2) {
@@ -50,11 +48,11 @@
     } else {
         document.getElementById('mailError').textContent = '';
     }
-    if ((ph1 === '' || !/^\d{10}$/.test(ph1)) && (ph2 === '' || !/^\d{10}$/.test(ph2)) && (ph3 === '' || !/^\d{10}$/.test(ph3))){
+   /* if ((p1 === '') && (p2 === '') && (p3 === '' )){
         document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit phone number.';
         valid = false;
     } else {
         document.getElementById('phoneError').textContent = '';
-    }
+    }*/
 
 }

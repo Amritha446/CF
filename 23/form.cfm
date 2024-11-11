@@ -18,7 +18,7 @@
                         Employment Application
                         <p class="fw-1 para">Infinity Box Inc.</p>
                     </div>
-                    <form method="post" id = 'form' class="mt-2 form">
+                    <form method="post" id = "form" class="mt-2 form">
                         <div class="col-5 text-secondary"> which position are you applying for?</div>
                         <select name = "position" class = "mt-2" id = "class" >
                             <option></option>
@@ -49,10 +49,10 @@
 
                         <div class = "para">Your contact information</div>
                         <div class = "col-5 text-secondary mt-2" required>Name</div>
-                        <input type = "text" name="name1" value = "first name" class = "mt-1 col-2" required>
+                        <input type = "text" name="name1" class = "mt-1 col-2" required>
                         <div class="error text-danger" id="firstnameError"></div>
 
-                        <input type = "text" name="name2" value = "last name" class = "mt-1 col-2" required><br>
+                        <input type = "text" name="name2" class = "mt-1 col-2" required><br>
                         <div class="error text-danger" id="lastnameError"></div>
 
                         <div class = "col-5 text-secondary mt-2">Email address</div>
@@ -71,22 +71,10 @@
                     </form>
                 </div>
                 <cfif structKeyExists(form,"submit")>
-                    <cfset local.position1=form.position>
-                    <cfset local.relocate11=form.relocate1>
-                    <cfset local.relocate22=form.relocate2>
-                    <cfset local.date1=form.date>
-                    <cfset local.site1=form.site>
-                    <cfset local.resume1=form.resume>
-                    <cfset local.salary1=form.sal>
-                    <cfset local.firstNme=form.name1>
-                    <cfset local.lastNme=form.name2>
-                    <cfset local.mail1=form.mail>
-                    <cfset local.ph1=form.p1>
-                    <cfset local.ph2=form.p2>
-                    <cfset local.ph3=form.p3>
                     <cfset local.formObj=createObject("component","form")>
-                    <cfset local.result=local.formObj.form(form.name,form.num,form.mail)>
-                    <cfdump  var="#local.result#">
+                    <cfset local.result=local.formObj.form(form.position,form.relocate1,form.relocate2,form.date,form.site,form.resume,form.sal,form.name1,form.name2,form.mail,form.p1,form.p2,form.p3)>
+                <cfelse>
+                    data missing
                 </cfif> 
                 <script src="js/validation.js"></script>
             </div>
