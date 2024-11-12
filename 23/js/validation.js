@@ -1,8 +1,7 @@
 
     function validate(){
     let position = document.forms["form"]["position"].value;
-    let relocate1 = document.forms["form"]["relocate1"].checked;
-    let relocate2 = document.forms["form"]["relocate2"].checked;
+    let relocate = document.forms["form"]["relocate1"].checked;
     let date1 = document.forms["form"]["date"].value;
     let firstNme = document.forms["form"]["name1"].value;
     let lastNme = document.forms["form"]["name2"].value;
@@ -12,7 +11,7 @@
     let p3 = document.forms["form"]["p3"].value;
     let valid = true;
 
-  if (!relocate1 && !relocate2) {
+  if (relocate) {
     document.getElementById('relocateError').textContent = 'Please select one option.';
     valid = false;
   } else {
@@ -54,5 +53,6 @@
     } else {
         document.getElementById('phoneError').textContent = '';
     }*/
+   return valid;
 
 }

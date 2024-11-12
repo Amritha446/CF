@@ -18,7 +18,7 @@
                         Employment Application
                         <p class="fw-1 para">Infinity Box Inc.</p>
                     </div>
-                    <form method="post" id = "form" class="mt-2 form">
+                    <form method="post" id = "form" class="mt-2 form" enctype="multipart/form-data">
                         <div class="col-5 text-secondary"> which position are you applying for?</div>
                         <select name = "position" class = "mt-2" id = "class" >
                             <option></option>
@@ -29,8 +29,8 @@
                         </select>
                         <div class="error text-danger" id="positionError"></div>
                         <div class="col-3 text-secondary mt-2" >Are you willing to relocate?</div>
-                        <input type = "radio" name = "relocate1" value = "Yes" class="mt-1 me-1" >Yes<br>
-                        <input type = "radio" name = "relocate2" value = "No" class="mt-2 me-1">No<br>
+                        <input type = "radio" name = "relocate" value = "Yes" class="mt-1 me-1" >Yes<br>
+                        <input type = "radio" name = "relocate" value = "No" class="mt-2 me-1">No<br>
                         <div class="error text-danger" id="relocateError"></div>
 
                         <div class="col-3 text-secondary mt-2">When can you start?</div>
@@ -65,14 +65,15 @@
                         <input type = "text" name = "p3" class = "mt-1 col-1" maxlength = "4" required><br>
                         <div class="error text-danger" id="phoneError"></div>
 
-                        <button type = "button" onClick="validate()">submit</button><br>
+                        <button type = "submit" name="submit" onClick="return validate()">submit</button><br>
                         This site is protected by reCAPTCHA Enterprise and the Google 
                         <a href="#">Privacy Policy </a> and <a href="#">Terms of Service apply.</a>
                     </form>
                 </div>
                 <cfif structKeyExists(form,"submit")>
                     <cfset local.formObj=createObject("component","form")>
-                    <cfset local.result=local.formObj.form(form.position,form.relocate1,form.relocate2,form.date,form.site,form.resume,form.sal,form.name1,form.name2,form.mail,form.p1,form.p2,form.p3)>
+                    <cfset local.result=local.formObj.form(form.position,form.relocate,form.date,form.site,form.resume,form.sal,form.name1,form.name2,form.mail,form.p1,form.p2,form.p3)>
+                    <cflocation url="welcome.cfm">
                 <cfelse>
                     data missing
                 </cfif> 

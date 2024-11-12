@@ -1,32 +1,32 @@
 <html>
     <head>
         <title>user_dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
     </head>
     <body>
-        <cfoutput>
-            <form method="post">
-                Enter username:
-                <input type="text" name="userName" required>
-                Enter password:
-                <input type="password" name="password" required>
-            </form>
+        <cfoutput> 
             <table>
-                <thead>
-                    <tr>
-                        <th>name</th>
-                        <th>description<th>
-                    </tr>
-                </thead>
                 <tbody>
                     <cfquery name="pagesList" datasource="data_base1">
                         select page_id,page_name,page_description from page1
                     </cfquery>
                     <cfloop query="pagesList">
+                        <!---<div class="description">
+                            <div class="button" data-toggle="collapse" data-target="#collapseExample#">
+                                <button type="button" value="button">button</button>
+                            </div>
+                            <div class="collapse" id="collapseExample">
+                            <a href="description.cfm?id=#page_id#">#page_name#</a><br>
+                                #page_description#
+                            </div>
+                        </div>--->
                         <tr>
-                            <td>#page_name#</td>
+                            <td><a href="description.cfm?id=#page_id#">#page_name#</a></td><td></td>
                             <td>#page_description#</td>
-                            <td><a href="admin_edit_page.cfm? id=#page_id#">Edit</a></td>
-                            <td><a href="admin_delete_page.cfm? id=#page_id#">Delete</a></td>
+                            <td><a href="admin_edit_page.cfm?id=#page_id#">Edit</a></td><td></td>
+                            <td><a href="admin_delete_page.cfm?id=#page_id#">Delete</a></td><br>
                         </tr>
                     </cfloop>
                 </tbody>
