@@ -2,10 +2,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>form validation</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
         <link href="style/style.css" rel="stylesheet">
+        <title>form validation</title>
     </head>
     <body>
         <cfoutput>
@@ -71,7 +71,7 @@
                     </form>
                 </div>
                 <cfif structKeyExists(form,"submit")>
-                    <cfset local.formObj=createObject("component","form")>
+                    <cfset local.formObj=createObject("component","component.form")>
                     <cfset local.result=local.formObj.form(form.position,form.relocate,form.date,form.site,form.resume,form.sal,form.name1,form.name2,form.mail,form.p1,form.p2,form.p3)>
                     <cflocation url="welcome.cfm">
                 <cfelse>

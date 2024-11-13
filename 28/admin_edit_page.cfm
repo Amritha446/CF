@@ -10,9 +10,10 @@
                 Enter description to be updated:
                 <input type="textarea" name="description" required>
                 <input type="submit" value="submit" name="submit">
+                <button type="button" name="btn">Log Out</button>
             </form>
             <cfif structKeyExists(form,"submit")>
-                <cfset local.saveObj=createObject("component","login")>
+                <cfset local.saveObj=createObject("component","component.login")>
                 <cfset local.result=local.saveObj.editPage(form.name,form.description,#url.id#)>
                 #local.result#
             </cfif>

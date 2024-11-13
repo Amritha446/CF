@@ -5,7 +5,7 @@
     <body>
         <cfoutput>
              #url.id#
-            <cfset local.saveObj=createObject("component","login")>
+            <cfset local.saveObj=createObject("component","component.login")>
             <cfset local.result=local.saveObj.deletePage(#url.id#)>
             #local.result#
         </cfoutput>

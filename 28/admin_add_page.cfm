@@ -10,9 +10,10 @@
                 Enter description
                 <input type="textarea" name="description" required>
                 <input type="submit" value="submit" name="submit">
+                <button type="button" name="btn">Log Out</button>
             </form>
             <cfif structKeyExists(form,"submit")>
-                <cfset local.saveObj=createObject("component","login")>
+                <cfset local.saveObj=createObject("component","component.login")>
                 <cfset local.result=local.saveObj.savePage(form.name,form.description)>
                 #local.result#
             </cfif>

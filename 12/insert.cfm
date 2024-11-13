@@ -9,7 +9,7 @@
                 <input type = "number" name="num" >
                 <input type = "submit" name="submit">
             </form>
-            <cfset local.obj=createObject("component","insert")>
+            <cfset local.obj=createObject("component","component.insert")>
             <cfset local.result=local.obj.insertQuery(form.num)>
             <cfdump var="#local.result#">
         </cfoutput>
