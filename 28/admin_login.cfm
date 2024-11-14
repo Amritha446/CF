@@ -13,13 +13,14 @@
             </form>
             <cfif structKeyExists(form,"submit")>
                 <cfset local.loginObj=createObject("component","component.login")>
-                <cfset local.output=local.loginObj.validateLogin(form.userName,local.encrypted_pass)>
+                <cfset local.output=local.loginObj.validateLogin(form.userName,form.password)>
                 <cfif local.output=="true">
                     <cflocation url="admin_dashboard.cfm" addToken="no">
                 <cfelse>
                     invalid login attempt
                 </cfif>
             </cfif>
+            #session.isAuthenticated#
         </cfoutput>
     </body>
 </html>

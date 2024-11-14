@@ -17,8 +17,8 @@ function validate(){
     } else {
         document.getElementById('relocateError').textContent = '';
     }
-    if (date1 === '') {
-        document.getElementById('positionError').textContent = 'Please enter joining date.';
+    if (position === '') {
+        document.getElementById('positionError').textContent = 'Please enter position.';
         valid = false;
       } else {
         document.getElementById('positionError').textContent = '';
@@ -53,6 +53,6 @@ function validate(){
     } else {
         document.getElementById('phoneError').textContent = '';
     }
-   return valid;
+    return valid;
 
 }

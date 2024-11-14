@@ -22,7 +22,7 @@
         <cfargument name="text">
         <cfargument name="passwordd">
         <cfif validateUser(arguments.text, arguments.passwordd)>
-            <cfset session.isAuthenticated = true>
+            <cfset session. = true>
         <cfelse>
             <cfset session.isAuthenticated = false>
         </cfif>
