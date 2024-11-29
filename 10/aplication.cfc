@@ -1,7 +1,6 @@
 <cfcomponent>
-    <cfset this.sessionManagement="yes">
-
-    <cffunction  name="onSessionStart" >
-        <cfset session.Session=structNew()>
+    <cfset this.sessionManagement = "yes">
+    <cffunction  name = "onSessionStart" >
+        <cfset session.Session = structNew()>
      </cffunction>
-</cfcomponent>
+</cfcomponent>   <!---session variable enabling--->
