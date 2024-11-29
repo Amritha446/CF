@@ -4,17 +4,21 @@
     </head>
     <body>
         <cfoutput>
-            <form method="post">
-                Enter your name:
-                <input type="text" name="num">
-                enter your mail id:
-                <input type="mail" name="mail">
-                enter the message:
-                <input type="textarea" name="msg">
-                select image to upload:
-                <input type="image" name="img">
-                <input type="submit" name="submit">
+            <form method="POST"  enctype="multipart/form-data">
+                Name:
+                <input type = "text" name = "name" id = "name">
+                Email:
+                <input type = "email" name = "email" id = "email">
+                Message:
+                <textarea name = "message" id = "message" ></textarea>
+                Upload Image:
+                <input type = "file" name = "image" id = "image">
+                <input type = "submit" value = "Submit" name="submit">
             </form>
+            <cfif structKeyExists(form,"submit")>
+                <cfset local.formHandler = createObject("component", "component.email")>
+                <cfset local.result=local.formHandler.sendEmail(form.name,form.email,form.message,form.image)>
+            </cfif>
         </cfoutput>
     </body>
 </html>

@@ -4,40 +4,17 @@
         <title>multiplying digits</title>
     </head>
     <body>
-
         <cfset result1 = 0>
-        <cfinvoke component="multiple" method="multiply" a="1" b="2" returnvariable="result1">
+        <cfinvoke component = "multiple" method = "multiply" a = "1" b = "2" returnvariable = "result1">
         <p>multiply(1, 2) using cfinvoke: #result1#</p>
-
-        <cfset result2 = 0>
-        <cfinvoke component="multiple" method="multiply" a="1" b="2" c="3" returnvariable="result2">
-        <p>multiply(1, 2, 3) using cfinvoke: #result2#</p>
-
-        <cfset result3 = 0>
-        <cfinvoke component="multiple" method="multiply" a="1" b="2" c="3" d="4" returnvariable="result3">
-        <p>multiply(1, 2, 3, 4) using cfinvoke: #result3#</p>
         <br>
-       
-        <cfobject component="multiple" name="multiplyObj">
-        <cfset result4 = multiplyObj.multiply(1, 2)>
-        <p>multiply(1, 2) using cfobject: #result4#</p>
-
-        <cfset result5 = multiplyObj.multiply(1, 2, 3)>
-        <p>multiply(1, 2, 3) using cfobject: #result5#</p>
-
-        <cfset result6 = multiplyObj.multiply(1, 2, 3, 4)>
-        <p>multiply(1, 2, 3, 4) using cfobject: #result6#</p>
+        <cfobject component = "multiple" name = "multiplyObj">
+        <cfset result2 = multiplyObj.multiply(1, 2, 3)>
+        <p>multiply(1, 2, 3) using cfobject: #result2#</p>
         <br>
-       
-        <cfset multiplyObj2 = createObject("component", "multiple")>
-        <cfset result7 = multiplyObj2.multiply(1, 2)>
-        <p>multiply(1, 2) using createObject: #result7#</p>
-
-        <cfset result8 = multiplyObj2.multiply(1, 2, 3)>
-        <p>multiply(1, 2, 3) using createObject: #result8#</p>
-
-        <cfset result9 = multiplyObj2.multiply(1, 2, 3, 4)>
-        <p>multiply(1, 2, 3, 4) using createObject: #result9#</p>
+        <cfset multiplyObj2 = createObject("component", "component.multiple")>
+        <cfset result3 = multiplyObj2.multiply(1, 2, 3, 4)>
+        <p>multiply(1, 2, 3, 4) using createObject: #result3#</p>
     </body>
 </html>
 
