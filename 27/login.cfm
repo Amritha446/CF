@@ -17,7 +17,7 @@
                 <button type = "submit" onClick="validation()" name="submit">submit</button>
             </form>
             <cfif structKeyExists(form,"submit")>
-                <cfset local.login = createObject("component","login")>
+                <cfset local.login = createObject("component","component.login")>
                 <cfset local.login.authenticateUser(form.name,form.passwordd)>
                 <cfif local.login.isLoggedIn()>
                 <cflocation url="welcome.cfm" addToken="no">

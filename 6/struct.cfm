@@ -12,7 +12,7 @@
                 <input type ="submit" value = "sub" name = "submit">
             </form>
             <cfif structKeyExists(form,"submit")>
-                <cfset local.output = createObject("component","struct")>
+                <cfset local.output = createObject("component","component.struct")>
                 <cfset local.struct = local.output.formStruct(form.text1,form.text2)>
                 <cfdump  var = "#local.struct#">
             </cfif>

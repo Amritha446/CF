@@ -4,7 +4,7 @@
     </head>
     <body>
         <cfoutput>
-            <cfset local.login = createObject("component","login")>
+            <cfset local.login = createObject("component","component.login")>
             <cfset local.result=local.login.isLoggedIn()>
             <cfif local.login.isLoggedIn()>
                 welcome

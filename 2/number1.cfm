@@ -6,7 +6,7 @@
     </form>
     <cfif structKeyExists(form, "num1")>
         <cfset local.num = form.num1>
-        <cfset local.output = createObject("component","number")>
+        <cfset local.output = createObject("component","component.number")>
         <cfset local.result = local.output.formData(local.num)>
         #local.result#
     </cfif>

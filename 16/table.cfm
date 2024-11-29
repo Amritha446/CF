@@ -14,7 +14,7 @@
             <cfif structKeyExists(form,"submit")>
                 <cfset local.num1 = form.num1>
                 <cfset local.num2 = form.num2>
-                <cfset local.output = createObject("component","table")>
+                <cfset local.output = createObject("component","component.table")>
                 <cfset local.result = local.output.table_data(form.num1,form.num2)>
                 <cfdump  var = #local.result#>
                 <cfloop index = "i" from = "1" to = "#form.num1#">

@@ -16,7 +16,7 @@
                 <input type = "submit" value = "Submit" name="submit">
             </form>
             <cfif structKeyExists(form,"submit")>
-                <cfset local.formHandler = createObject("component", "email")>
+                <cfset local.formHandler = createObject("component", "component.email")>
                 <cfset local.result=local.formHandler.sendEmail(form.name,form.email,form.message,form.image)>
             </cfif>
         </cfoutput>
