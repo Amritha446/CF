@@ -8,14 +8,11 @@
                 submit here:
                 <input type = "submit" name = "submit" value = "submit">
             </form>
-            <cfif NOT isDefined("cookie.TimeVisited")>
-                <cfcookie name = "TimeVisited" value = 0 expires = 30 httponly = "yes" />
+            <cfif structKeyExists(form,"submit")>
+                <cfset local.obj=createObject("component","component.cookie")>
+                <cfset local.result=local.obj.countCheck()>
+                #local.result#
             </cfif>
-            <cfif isDefined("form.submit")>
-                <cfset cookie.TimeVisited = cookie.TimeVisited+1>
-                <cflocation url="cookie.cfm">
-            </cfif>
-            number of times page opened:#cookie.TimeVisited#
         </cfoutput>
     </body>
 </html>

@@ -1,5 +1,5 @@
 <cfcomponent>
-    <cffunction  name = "name">
+    <cffunction  name = "name" access="public" returnType="struct">
         <cfset local.struct = structNew()>
         <cfset local.struct["currentMonthWord"] = monthAsString(dateFormat(Now(),"mm"))>
         <cfset local.today = dayofweek(now())>
