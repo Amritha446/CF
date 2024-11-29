@@ -15,7 +15,7 @@
             <cfif structKeyExists(form,"submit")>
                 <cfset local.text1=form.text>
                 <cfset local.mail1=form.mail>
-                <cfset local.obj=createObject("component","captcha")>
+                <cfset local.obj=createObject("component","component.captcha")>
                 <cfset local.result=local.obj.captchaCheck(form.text)>
                 #local.result#
             </cfif>

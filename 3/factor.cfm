@@ -11,7 +11,7 @@
             </form>
             <cfif structKeyExists(form, "num1")>
                 <cfset local.number = form.num1>
-                <cfset local.output = createObject("component", "factors")>
+                <cfset local.output = createObject("component", "component.factors")>
                 <cfset local.result = local.output.factorFinder(local.number)>
                 #local.result#
             </cfif>

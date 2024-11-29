@@ -10,10 +10,9 @@
                 <input type="submit" name="submit" value="submit">
             </form>
             <cfif structKeyExists(form,"submit")>
-                <cfset local.tagObj = createObject("component","tagCloud")>
+                <cfset local.tagObj = createObject("component","component.tagCloud")>
                 <cfset local.result = local.tagObj.inputFunction(form.text)>
                 <cfdump  var="#local.result#">
-                
                 <cfloop collection="#local.result#" item="item">
 						<p style="font-size: #local.result[item]#px;">#item#</p>
 				</cfloop>

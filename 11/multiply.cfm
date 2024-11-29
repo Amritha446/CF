@@ -10,7 +10,7 @@
         </form>
         <cfif structKeyExists(form,"num")>
             <cfset local.num1 = form.num>
-            <cfset local.obj=createObject("component","multiply")>
+            <cfset local.obj=createObject("component","component.multiply")>
             <cfset local.result=local.obj.multiplyNum()>
             <cfoutput>
                 product of entered elements:#local.result#

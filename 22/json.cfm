@@ -9,7 +9,7 @@
                 <input type="submit" name="submit">
             </form>
             <cfif structKeyExists(form, "submit")>
-                <cfset local.obj=createObject("component","json")>
+                <cfset local.obj=createObject("component","component.json")>
                 <cfset local.result=local.obj.fileRead()>
                 <cfdump  var="#local.result#">
             </cfif>

@@ -11,7 +11,7 @@
             </form>
             <cfif structKeyExists(form, "text")>
                 <cfset local.text1 = form.text>
-                <cfset local.object = createObject("component","count")>
+                <cfset local.object = createObject("component","component.count")>
                 <cfset local.result = local.object.counter(local.text1)>
                 <p>count = #local.result#</p>
             </cfif>

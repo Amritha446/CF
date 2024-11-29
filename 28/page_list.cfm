@@ -1,34 +1,29 @@
 <html>
     <head>
         <title>user_dashboard</title>
+        <link href="../../bootstrap/css" rel="stylesheet" >
     </head>
     <body>
         <cfoutput>
-            
             <table>
-                <thead>
-                    <tr>
-                        <th>name</th>
-                        <th></th>
-                        <th>description<th>
-                    </tr>
-                </thead>
                 <tbody>
                     <cfquery name="pagesList" datasource="data_base1">
                         select page_id,page_name,page_description from page1
                     </cfquery>
                     <cfloop query="pagesList">
-                        <tr>
-                            <td>#page_name#</td><td></td>
-                            <td>#page_description#</td>
-                        </tr>
+                        <div class="ms-5">
+                            <button type="button" class="btn btn-info mb-3 mt-2" data-bs-toggle="collapse" data-bs-target="###page_id#">
+                                #page_name#
+                            </button>
+                            <div id="#page_id#" class="collapse">#page_description#</div>
+                        </div>
                     </cfloop>
                 </tbody>
             </table>
-            <a href="home.cfm">Back to login</a>
+            <div class="ms-5"><a href="home.cfm">Back to login</a></div>
             <cfif structKeyExists(session,"isAuthenticated")>
                 <cflocation url="admin_login.cfm" addToken="no">
-                <cfset local.obj=createObject("component","login")>
+                <cfset local.obj=createObject("component","component.login")>
                 <cfset local.pagesList=local.obj.select()>
             </cfif>
         </cfoutput>
