@@ -19,14 +19,13 @@
         </cfoutput>
         <script>
             function checkEmail(){
-                console.log('hi');
                 var email=$('#email').val();
                 if(email.trim()===" "){
                     $('#submit').prop('disabled',true);
                     return;
                }
                $.ajax({
-                    url : 'subscription.cfc?method=checkEmailExists',
+                    url : 'component/subscription.cfc?method=checkEmailExists',
                     type: 'GET',
                     data:{email:email},
                     success:function(response){
@@ -46,9 +45,8 @@
             function submitForm(){
                var firstName=$('#firstName').val();
                var email=$('#email').val();
-               
                $.ajax({
-                    url:'subscription.cfc?method=insertSubscription',
+                    url:'component/subscription.cfc?method=insertSubscription',
                     type:'POST',
                     data:{firstName:firstName,email:email},
                     success:function(response){

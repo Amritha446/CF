@@ -1,8 +1,7 @@
 
-    function validate(){
+function validate(){
     let position = document.forms["form"]["position"].value;
-    let relocate1 = document.forms["form"]["relocate1"].checked;
-    let relocate2 = document.forms["form"]["relocate2"].checked;
+    let relocate = document.forms["form"]["relocate"].checked;
     let date1 = document.forms["form"]["date"].value;
     let firstNme = document.forms["form"]["name1"].value;
     let lastNme = document.forms["form"]["name2"].value;
@@ -12,14 +11,14 @@
     let p3 = document.forms["form"]["p3"].value;
     let valid = true;
 
-  if (!relocate1 && !relocate2) {
-    document.getElementById('relocateError').textContent = 'Please select one option.';
-    valid = false;
-  } else {
-    document.getElementById('relocateError').textContent = '';
-  }
-    if (date1 === '') {
-        document.getElementById('positionError').textContent = 'Please enter joining date.';
+    if (relocate) {
+        document.getElementById('relocateError').textContent = 'Please select one option.';
+        valid = false;
+    } else {
+        document.getElementById('relocateError').textContent = '';
+    }
+    if (position === '') {
+        document.getElementById('positionError').textContent = 'Please enter position.';
         valid = false;
       } else {
         document.getElementById('positionError').textContent = '';
@@ -48,11 +47,12 @@
     } else {
         document.getElementById('mailError').textContent = '';
     }
-   /* if ((p1 === '') && (p2 === '') && (p3 === '' )){
+    if ((p1 === '') && (p2 === '') && (p3 === '' )){
         document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit phone number.';
         valid = false;
     } else {
         document.getElementById('phoneError').textContent = '';
-    }*/
+    }
+    return valid;
 
 }

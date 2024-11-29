@@ -11,7 +11,7 @@
             <input type = "submit" value = "sub" name = "submit">
         </form>
         <cfif structKeyExists(form,"submit")>
-            <cfset local.output = createObject("component","structure")>
+            <cfset local.output = createObject("component","component.structure")>
             <cfset local.struct = local.output.formStruct(form.text1,form.text2)>
             <cfif structKeyExists(session.Session,form.text1)>
                 can't add

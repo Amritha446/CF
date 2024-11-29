@@ -12,7 +12,7 @@
         <cfset result2 = multiplyObj.multiply(1, 2, 3)>
         <p>multiply(1, 2, 3) using cfobject: #result2#</p>
         <br>
-        <cfset multiplyObj2 = createObject("component", "multiple")>
+        <cfset multiplyObj2 = createObject("component", "component.multiple")>
         <cfset result3 = multiplyObj2.multiply(1, 2, 3, 4)>
         <p>multiply(1, 2, 3, 4) using createObject: #result3#</p>
     </body>
